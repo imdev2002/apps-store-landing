@@ -1,11 +1,30 @@
+'use client'
+
+import { Buttton } from '@/components/common'
 import { Search } from '@/components/icons'
 import { NAVIGATIONS } from '@/constants'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export default function Header() {
+  const [scroll, setScroll] = useState(false)
+  useEffect(() => {
+    window.onscroll = () => {
+      if (window.pageYOffset < 150) {
+        setScroll(false)
+      } else if (window.pageYOffset > 150) {
+        setScroll(true)
+      }
+      return () => (window.onscroll = null)
+    }
+  }, [])
   return (
-    <header className="px-16 h-[92px] bg-[#0C0A09] flex items-center justify-between">
+    <header
+      className={`px-16 h-[92px] bg-[#0C0A09] flex items-center justify-between ${
+        scroll ? 'fixed inset-x-0 top-0 z-50' : ''
+      }`}
+    >
       <div className="flex items-center gap-x-3">
         <Link href="/">
           <Image
@@ -42,9 +61,7 @@ export default function Header() {
             <Search />
           </label>
         </div>
-        <button className="px-3 py-2.5 bg-[#FF1E02] rounded-lg font-semibold cursor-pointer">
-          Log in
-        </button>
+        <Buttton className="rounded-lg">Login</Buttton>
         <Image
           src="/images/usa-flag.png"
           alt="usa-flag"

@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "image": "/images/gem-1.png",
+      "title": "Small Pack",
+      "quantity": 20,
+      "price": 9.99
+    },
+    {
+      "image": "/images/gem-2.png",
+      "title": "Medium Pack",
+      "quantity": 20,
+      "price": 9.99
+    },
+    {
+      "image": "/images/gem-3.png",
+      "title": "Giant Pack",
+      "quantity": 20,
+      "price": 9.99
+    },
+    {
+      "image": "/images/gem-4.png",
+      "title": "Enormous Pack",
+      "quantity": 20,
+      "price": 9.99
+    }
+  ]
+}
